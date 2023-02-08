@@ -1,0 +1,36 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+Body {
+    background-color: whitesmoke;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+header {
+    background-color: rgb(64, 146, 55);
+}
+
+h1 {
+    margin: auto;
+    padding: 1rem;
+    width: max-content;
+    color: #273e66;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    background-color: rgb(209, 208, 208);
+}
+  
+a {
+    text-decoration: none;
+    color: #000000;
+}
+  

@@ -23,15 +23,18 @@ main {
 .gameboard {
     height: 500px;
     width: 600px;
-    background-color: gray;
+    background-color: black;
+    border-radius: 2px;
+    padding: 2px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
 .gamebox {
-    border-bottom: 1px solid #000000;
-    border-right: 1px solid #000000;
+    margin: 2px;
+    background-color: gray;
+    border-radius: 2px;
 }
 
 .gamebox:hover {
@@ -51,9 +54,8 @@ footer {
     padding: 1rem;
     background-color: rgb(209, 208, 208);
 }
-  
+
 a {
     text-decoration: none;
     color: #000000;
 }
-  

@@ -35,6 +35,8 @@ main {
     margin: 2px;
     background-color: gray;
     border-radius: 2px;
+    padding: center;
+    text-align: center;
 }
 
 .gamebox:hover {

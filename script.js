@@ -60,6 +60,16 @@ function createGameArray(row, column, value) {
             }
             return null;
         },
+        checkForTie: (board) => {
+            for (let row = 0; row < 3; row++) {
+                for (let col = 0; col < 3; col++) {
+                    if (board[row][col] === "") {
+                        return false; // Empty cell found, game is not a tie
+                    }
+                }
+            }
+            return true; // All cells are filled, game is a tie
+        },
     };
 }
 
@@ -111,6 +121,7 @@ gameBox.forEach(function (box, index) {
         updateArray = gameArray.getGameArray();
         console.log(updateArray);
         console.log(gameArray.checkForWin(updateArray));
+        console.log(gameArray.checkForTie(updateArray));
         switchPlayer();
     });
 });

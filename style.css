@@ -17,9 +17,19 @@ header {
 
 main {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    flex-direction: column;
+    gap: 2rem;
 }
+
+.result {
+    font-size: 5rem;
+    text-align: center;
+    padding: 10px;
+    height: max-content;
+}
+
 .gameboard {
     height: 500px;
     width: 600px;
@@ -28,19 +38,35 @@ main {
     padding: 2px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
 }
 
 .gamebox {
+    display: flex;
     margin: 2px;
     background-color: gray;
     border-radius: 2px;
     padding: center;
     text-align: center;
+    cursor: pointer;
 }
 
 .gamebox:hover {
     transform: scale(1.02);
+}
+
+.gamebox p {
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+}
+
+.restart {
+    border: 0.5rem solid black;
+    font-size: 3rem;
+    padding: 4px;
+    border-radius: 10px;
 }
 
 h1 {

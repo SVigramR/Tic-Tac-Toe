@@ -80,12 +80,13 @@ let copy = gameArray.getGameArray();
 console.log(copy);
 
 const gameBox = document.querySelectorAll(".gamebox");
+const result = document.querySelector(".result");
 
 gameBox.forEach(function (box, index) {
     box.addEventListener("click", function boxClick(event) {
-        const clickedCell = event.target;
-        clickedCell.textContent = currentPlayer;
-        let updateArray;
+        let para = document.createElement("p");
+        box.appendChild(para);
+        para.textContent = currentPlayer;
         switch (index) {
             case 0:
                 gameArray.setCell(0, 0, currentPlayer);
@@ -118,10 +119,17 @@ gameBox.forEach(function (box, index) {
                 break;
         }
         event.target.removeEventListener("click", boxClick);
-        updateArray = gameArray.getGameArray();
+        let updateArray = gameArray.getGameArray();
         console.log(updateArray);
-        console.log(gameArray.checkForWin(updateArray));
-        console.log(gameArray.checkForTie(updateArray));
+        if (gameArray.checkForWin(updateArray) === "O") {
+            result.textContent = "Player1 Won the Game!"
+        }
+        if (gameArray.checkForWin(updateArray) === "X") {
+            result.textContent = "Player2 Won the Game!"
+        }
+        if (gameArray.checkForTie(updateArray) === true ) {
+            result.textContent = "It's a Tie!"
+        }
         switchPlayer();
     });
 });

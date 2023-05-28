@@ -126,7 +126,10 @@ function justClick(event) {
         result.textContent = "Player2 Won the Game!";
         removeEventListeners();
     }
-    if (gameArray.checkForTie(updateArray) === true) {
+    if (
+        gameArray.checkForTie(updateArray) === true &&
+        gameArray.checkForWin(updateArray) === null
+    ) {
         result.textContent = "It's a Tie!";
         removeEventListeners();
     }
@@ -165,6 +168,6 @@ function removeEventListeners() {
 let restartBtn = document.querySelector(".restart");
 restartBtn.addEventListener("click", function () {
     restart();
-}); 
+});
 
 boxClick();

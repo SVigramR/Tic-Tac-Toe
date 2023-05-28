@@ -6,6 +6,7 @@ let currentPlayer = player1;
 
 function switchPlayer() {
     currentPlayer = currentPlayer === player1 ? player2 : player1;
+    result.textContent = `Player ${currentPlayer}'s Turn`;
 }
 
 function createGameArray(row, column, value) {
@@ -116,6 +117,7 @@ function justClick(event) {
     event.currentTarget.removeEventListener("click", justClick);
     let updateArray = gameArray.getGameArray();
     console.log(updateArray);
+    switchPlayer();
     if (gameArray.checkForWin(updateArray) === "O") {
         result.textContent = "Player1 Won the Game!";
         removeEventListeners();
@@ -128,7 +130,6 @@ function justClick(event) {
         result.textContent = "It's a Tie!";
         removeEventListeners();
     }
-    switchPlayer();
 }
 
 function refresh() {
